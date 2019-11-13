@@ -227,7 +227,7 @@ address a:hover {
 @media (max-width: 800px) {
 
     body {
-        padding: 60px 30px 20px;
+        padding: 60px 20px 20px;
     }
 
     nav {
@@ -281,9 +281,51 @@ address a:hover {
     }
 }
 
-/* @media (max-width: 500px) {
+ @media (max-width: 500px) {
 
-} */
+    body {
+        padding: 2%;
+    }
+
+    header nav a {
+        padding: 20px;
+        border-top: 1px solid grey;
+    }
+
+    header nav a:last-child {
+        border-bottom: 1px solid grey;
+    }
+
+    .header-intro-wraper {
+        margin: 15px auto;
+    }
+
+    nav {
+        position: initial;
+        z-index: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+        /* border: 1px solid red; */
+    }
+
+    .main {
+        padding: 2%;
+    }
+    
+    .primary-section, .secondary-section {
+       flex-direction: column;
+       justify-content: space-between;
+    }
+    
+    .primary-section div:not(:first-child), .secondary-section div:not(:first-child) {
+        margin-top: 10%;
+    } 
+} 
 
 
 
