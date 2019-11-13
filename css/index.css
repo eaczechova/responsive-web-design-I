@@ -224,6 +224,117 @@ address a:hover {
 	transition: 0.3s;
 }
 
+
+/* SERVICES */
+
+.header-services-img img {
+	width: 100%;
+}
+
+.services-intro {
+	margin: 20px 0;
+}
+
+.services-intro h2 {
+	font-size: 20px;
+	padding: 10px 0;
+}
+
+.services-intro p {
+	text-align: justify;
+	line-height: 22px;
+	font-size: 17px;
+}	
+
+.services-main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.services-info {
+	border: 1px solid black;
+	background: rgb(240, 240, 240);
+	width: 48%;
+	height: 300px;
+	margin: 20px 10px;
+	padding: 15px;
+
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.services-info:nth-child(odd) {
+	margin-left: 0;
+}
+
+.services-info:nth-child(even) {
+	margin-right: 0;
+}
+
+.services-info h2 {
+	font-size: 20px;
+	margin-bottom: 0;
+}
+
+.services-info p {
+	font-size: 17px;
+	line-height: 22px;
+}
+
+.services-info button {
+	background: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 30%;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.services-facts {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 40px;
+	border-top: 2px solid black;
+}
+
+.services-facts h3 {
+	font-size: 18px;
+}
+
+.services-facts ul {
+	list-style-type: square;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.services-facts ul li {
+	padding: 6px 0;
+}
+
+.facts {
+	margin-right: 100px;
+	width: 50%;
+}
+
+.facts p {
+	font-size: 17px;
+	line-height: 22px;
+}
+
+@media   (min-width: 801px) and (max-width: 900px){
+    .nav-list a {
+        padding: 10px 18px;
+    }
+
+    .facts {
+        margin-right: 30px;
+    }
+
+}
+
+
 @media (max-width: 800px) {
 
     body {
@@ -235,7 +346,6 @@ address a:hover {
     }
 
     .nav-logo, .nav-list {
-        /* border: 1px solid red; */
         width: 100%;
     }
 
@@ -256,7 +366,11 @@ address a:hover {
         margin: 15px auto 20px;
     }
 
-    .header-intro-img {
+    .services-main {
+        justify-content: space-evenly;
+    }
+
+    .header-intro-img, .header-services-img {
         display: none;
     }
 
@@ -279,12 +393,54 @@ address a:hover {
     address {
         font-size: 15px;
     }
+
+    .services-info {
+        width: 45%;
+        min-width: 150px;
+    }
+
+    .services-info p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .services-info button {
+        width: 100px;
+    }
+
+    .services-facts {
+        flex-direction: column;
+        justify-content: space-between;
+     }
+
+     .facts, .facts-img {
+        margin-right: 0;
+        margin-top: 6%;
+        width: 100%;
+    }
+
+    .facts-img {
+        order: -1;
+    }
+
+    .facts-img img {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        height: 300px;
+    }
+
+     .nav-services {
+        position: initial;
+        margin-top: -50px;
+    } 
+
 }
 
  @media (max-width: 500px) {
 
     body {
-        padding: 2%;
+        padding: 5% 2%;
     }
 
     header nav a {
@@ -292,8 +448,12 @@ address a:hover {
         border-top: 1px solid grey;
     }
 
-    header nav a:last-child {
+    header .nav-list a:last-child {
         border-bottom: 1px solid grey;
+    }
+
+    .nav-logo a {
+        border: none;
     }
 
     .header-intro-wraper {
@@ -310,14 +470,13 @@ address a:hover {
     .nav-list {
         flex-direction: column;
         text-align: center;
-        /* border: 1px solid red; */
     }
 
     .main {
         padding: 2%;
     }
-    
-    .primary-section, .secondary-section {
+
+    .primary-section, .secondary-section, .services-main {
        flex-direction: column;
        justify-content: space-between;
     }
@@ -325,6 +484,28 @@ address a:hover {
     .primary-section div:not(:first-child), .secondary-section div:not(:first-child) {
         margin-top: 10%;
     } 
+
+    .services-info {
+        width: 100%;
+        margin: 2% auto;
+    }
+
+    .services-info:last-child {
+        margin-bottom: 5%;
+    }
+
+    .services-info p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .facts {
+        margin-top: 0;
+    }
+
+    .facts-img {
+        display: none;
+    }
 } 
 
 
