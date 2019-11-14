@@ -65,39 +65,56 @@ h1, h2, h3, h4, h5 {
 
 /* Copy and paste your work from yesterday here and start to refactor into flexbox */
 
-
 body {
-	padding: 60px 80px 20px;
-}
-
-nav {
-	display: flex;
-	margin-bottom: 35px;
-	position: fixed; 
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: white;
-	justify-content: space-between;
-	padding: 10px;
-	z-index: 3;
+    padding: 5% 2%;
 }
 
 header nav a {
-	text-decoration: none;
+    text-decoration: none;
 	color: gray;
-	padding: 10px 30px;
+    padding: 20px;
+    border-top: 1px solid grey;
+}
+
+header .nav-list a:last-child {
+    border-bottom: 1px solid grey;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .nav-list {
-	display: flex;
-	justify-content: space-evenly;
-	width: 60%;
-	flex: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-logo, .nav-list {
+    width: 100%;
+}
+
+.nav-list a {
+    padding: 15px 18px;
+}
+
+.logo {
+    display: block;
+    margin: 15px auto 20px;
 }
 
 .nav-logo {
-	padding-right: 40px;
+    order: -1;
+}
+
+.nav-logo a {
+    border: none;
+}
+
+.main {
+    padding: 2%;
 }
 
 .header-intro-wraper {
@@ -136,15 +153,9 @@ header nav a {
 	transition: 0.3s; 
 }
 
-.header-intro-img {
-	width: 50%;
-	text-align: center;
-	background-repeat: no-repeat;
-	height: 100%;
-	background-image: url('../img/header-img.png');
-	background-position: center;
+.header-intro-img, .header-services-img {
+    display: none;
 }
-
 
 .header-intro button:hover {
 	background: black;
@@ -157,9 +168,11 @@ header nav a {
 	justify-content: space-between;
 }
 
-.primary-section, .secondary-section {
+.primary-section, .secondary-section, .services-main {
 	width: 100%;
-	display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 	margin: 2% 0;
 }
 
@@ -169,8 +182,8 @@ header nav a {
 	justify-content: space-around;
 }
 
-.primary-section div:not(:last-child), .secondary-section div:not(:last-child) {
-	margin-right: 2%;
+.primary-section div:not(:first-child), .secondary-section div:not(:first-child) {
+    margin-top: 10%;
 } 
 
 .img-section {
@@ -181,16 +194,6 @@ header nav a {
 
 .img-section img {
 	width: 100%;
-}
-
-.nav-list hr {
-	height: 2px;
-	width: 3.8rem;
-	text-align: center;
-	margin: .2rem  -.2rem;
-	background: gray;
-	border: none;
-	transition: .4s ease-in-out;  
 }
 
 footer {
@@ -209,7 +212,8 @@ footer p {
 }
 
 address {
-	font-size: 19px;
+    font-size: 19px;
+    font-size: 15px;
 }
 
 address a {
@@ -255,14 +259,15 @@ address a:hover {
 .services-info {
 	border: 1px solid black;
 	background: rgb(240, 240, 240);
-	width: 48%;
+    width: 100%;
 	height: 300px;
-	margin: 20px 10px;
+    margin: 2% auto;
 	padding: 15px;
 
 	display:flex;
 	flex-direction: column;
-	justify-content: space-around;
+    justify-content: space-around;
+
 }
 
 .services-info:nth-child(odd) {
@@ -279,24 +284,26 @@ address a:hover {
 }
 
 .services-info p {
-	font-size: 17px;
-	line-height: 22px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .services-info button {
 	background: white;
 	border: 1px solid black;
 	border-radius: 5px;
-	width: 30%;
+    width: 30%;
+    width: 100px;
 	padding: 10px;
 	cursor: pointer;
 }
 
 .services-facts {
 	display: flex;
-	justify-content: space-between;
+    justify-content: space-between;
+    flex-direction: column;
 	padding-top: 40px;
-	border-top: 2px solid black;
+    border-top: 2px solid black;
 }
 
 .services-facts h3 {
@@ -313,9 +320,26 @@ address a:hover {
 	padding: 6px 0;
 }
 
+.services-facts {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .facts {
-	margin-right: 100px;
-	width: 50%;
+    margin-right: 0;
+    margin-top: 6%;
+    width: 100%;
+}
+
+.facts-img {
+    display: none;
+}
+
+.facts-img img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 300px;
 }
 
 .facts p {
@@ -323,56 +347,98 @@ address a:hover {
 	line-height: 22px;
 }
 
-@media   (min-width: 801px) and (max-width: 900px){
-    .nav-list a {
-        padding: 10px 18px;
-    }
 
-    .facts {
-        margin-right: 30px;
-    }
-
-}
-
-
-@media (max-width: 800px) {
-
-    body {
-        padding: 60px 20px 20px;
-    }
-
+@media (min-width: 500px) {
     nav {
         flex-direction: column;
     }
 
-    .nav-logo, .nav-list {
-        width: 100%;
-    }
-
     .nav-list {
+        flex-direction: row;
         justify-content: space-between;
     }
 
-    header nav a {
-        padding: 10px;
+    .nav-list a, .nav-logo a,  header .nav-list a:last-child {
+        border: none;
     }
 
     .nav-logo {
         order: -1;
     }
 
-    .logo {
-        display: block;
-        margin: 15px auto 20px;
+    .header-intro button {
+        width: 150px;
     }
 
-    .services-main {
+    .primary-section, .secondary-section, .services-main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
         justify-content: space-evenly;
+        margin: 2% 0;
+    }
+
+    .services-info {
+        width: 48%;
+        min-width: 150px;
+    }
+
+    .primary-section div:not(:first-child), .secondary-section div:not(:first-child) {
+        margin-top: 0;
+        margin-left: 2%;
+    } 
+
+    address {
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 800px)  {
+
+    body {
+        padding: 60px 20px 20px;
+    }
+
+    nav {
+        margin-bottom: 35px;
+        position: fixed; 
+        flex-direction: row;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        justify-content: space-between;
+        padding: 0;
+        z-index: 3;
     }
 
     .header-intro-img, .header-services-img {
-        display: none;
+        display: block;
     }
+    
+
+    .nav-list {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 70%;
+        flex: 2;
+    }
+
+    .nav-logo {
+        padding-right: 40px;
+        order: 1;
+        width: 30%;
+    }
+
+    .header-intro-img {
+	    width: 50%;
+	    text-align: center;
+	    background-repeat: no-repeat;
+	    height: 100%;
+	    background-image: url('../../img/header-img.png');
+	    background-position: center;
+    } 
 
     .header-intro h1 {
         font-size: 65px;
@@ -383,45 +449,12 @@ address a:hover {
     }
 
     .primary-section div, .secondary-section div {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .primary-section div:not(:last-child), .secondary-section div:not(:last-child) {
-        margin-right: 5%;
+        margin-right: 2%;
     } 
-
-    address {
-        font-size: 15px;
-    }
-
-    .services-info {
-        width: 45%;
-        min-width: 150px;
-    }
-
-    .services-info p {
-        font-size: 14px;
-        line-height: 17px;
-    }
-
-    .services-info button {
-        width: 100px;
-    }
-
-    .services-facts {
-        flex-direction: column;
-        justify-content: space-between;
-     }
-
-     .facts, .facts-img {
-        margin-right: 0;
-        margin-top: 6%;
-        width: 100%;
-    }
-
-    .facts-img {
-        order: -1;
-    }
 
     .facts-img img {
         display: block;
@@ -435,78 +468,9 @@ address a:hover {
         margin-top: -50px;
     } 
 
+    footer {
+        padding-left: 2%;
+    }
+
 }
-
- @media (max-width: 500px) {
-
-    body {
-        padding: 5% 2%;
-    }
-
-    header nav a {
-        padding: 20px;
-        border-top: 1px solid grey;
-    }
-
-    header .nav-list a:last-child {
-        border-bottom: 1px solid grey;
-    }
-
-    .nav-logo a {
-        border: none;
-    }
-
-    .header-intro-wraper {
-        margin: 15px auto;
-    }
-
-    nav {
-        position: initial;
-        z-index: 0;
-        padding: 0;
-        margin-bottom: 0;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .main {
-        padding: 2%;
-    }
-
-    .primary-section, .secondary-section, .services-main {
-       flex-direction: column;
-       justify-content: space-between;
-    }
-    
-    .primary-section div:not(:first-child), .secondary-section div:not(:first-child) {
-        margin-top: 10%;
-    } 
-
-    .services-info {
-        width: 100%;
-        margin: 2% auto;
-    }
-
-    .services-info:last-child {
-        margin-bottom: 5%;
-    }
-
-    .services-info p {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .facts {
-        margin-top: 0;
-    }
-
-    .facts-img {
-        display: none;
-    }
-} 
-
-
 
